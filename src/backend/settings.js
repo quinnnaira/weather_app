@@ -11,7 +11,6 @@ export const saveLocation = (e) => {
 
 		const $defaultLocation = $("#defaultLocation").val().trim();
 
-		//check if the location is empty
 		if ($defaultLocation === undefined || $defaultLocation === "") {
 			Swal.fire({
 				title: "Invalid Location!",

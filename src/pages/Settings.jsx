@@ -45,8 +45,8 @@ const Settings = () => {
 						<form
 							action=""
 							id="settingsForm"
-							onSubmit={e=>e.preventDefault()}
-							>
+							onSubmit={e => e.preventDefault()}
+						>
 							<label
 								htmlFor="defaultLocation "
 								className="brand-small-text py-3">
@@ -67,9 +67,9 @@ const Settings = () => {
 								<Button
 									text="save location"
 									className="shadow brand-btn-3  my-5 text-light text-capitalize"
-                  onClick={(e) => {
-                    settings.saveLocation(e);
-                  }}
+									onClick={(e) => {
+										settings.saveLocation(e);
+									}}
 								/>
 							</section>
 
@@ -80,7 +80,7 @@ const Settings = () => {
 							</label>
 
 							<div className="mb-3">
-								<select className="form-select form-select my-2" name="weatherUnit" id="weatherUnitContainer" value={weatherUnit} onChange={(e)=>setWeatherUnit(e.target.value)}>
+								<select className="form-select form-select my-2" name="weatherUnit" id="weatherUnitContainer" value={weatherUnit} onChange={(e) => setWeatherUnit(e.target.value)}>
 									<option defaultValue="SELECT" value={0} className="text-capitalize">
 										Degree Celsius
 									</option>
@@ -97,7 +97,7 @@ const Settings = () => {
 								<Button
 									text="save unit"
 									className="shadow brand-btn-3-secondary toggle-width-3 my-5 text-dark text-capitalize p-2"
-									onClick={e=>settings.changeWeatherUnit(e)}
+									onClick={e => settings.changeWeatherUnit(e)}
 								/>
 							</section>
 

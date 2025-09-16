@@ -51,7 +51,6 @@ export const checkWeatherUnitDeg = () => {
 				result = "c";
 		}
 	} else {
-		//the weather unit it celsius if not defined
 		db.create("WEATHER_UNIT", "celsius");
 		result = "c";
 	}
@@ -64,7 +63,7 @@ export const handleWeatherForm = (e, search) => {
 
 	if (db.get("TRACK_SAVED_LOCATION_WEATHER") === "false") {
 		Swal.fire({
-			text: "Changes settings to track default location",
+			text: "Loading...",
 			icon: "info",
 			timer: 1500,
 			toast: true,
@@ -88,7 +87,7 @@ export const handleWeatherForm = (e, search) => {
 export const findCity = (searchTerm,updateDataArray)=> {
 	if (db.get("TRACK_SAVED_LOCATION_WEATHER") === "false") {
 		Swal.fire({
-			text: "Changes settings to track default location",
+			text: "Loading...",
 			icon: "info",
 			timer: 1500,
 			toast: true,
@@ -119,7 +118,6 @@ export const findCity = (searchTerm,updateDataArray)=> {
 						timer: 1000,
 					});
 				} else {
-					//check if the API returned a legit response
 					console.log(result)
 					updateDataArray(result)
 				}
@@ -129,7 +127,6 @@ export const findCity = (searchTerm,updateDataArray)=> {
 				closeUtilityComponent();
 				console.log("Error")
 
-				//check if the error is empty
 				if (error === "") {
 					Swal.fire({
 						toast: true,
@@ -139,7 +136,6 @@ export const findCity = (searchTerm,updateDataArray)=> {
 						position: "top",
 						showConfirmButton: false,
 					}).then((willProceed) => {
-						//scroll to top when the promise is resolved!
 						scrollToElement("weatherContainer");
 					});
 				} else {
@@ -151,7 +147,6 @@ export const findCity = (searchTerm,updateDataArray)=> {
 						position: "top",
 						showConfirmButton: false,
 					}).then((willProceed) => {
-						//scroll to top when the promise is resolved!
 						scrollToElement("weatherContainer");
 					});
 				}
@@ -161,43 +156,31 @@ export const findCity = (searchTerm,updateDataArray)=> {
 	})
 }
 
-//function to determine custom icon packs to use
 export let weatherSvg;
 export const checkWeatherCode = (code) => {
-	//check the result code states and allocate different icon svg depending on the weather code
 	if (code >= 200 && !(code >= 300)) {
-		//Thunder weather status
 		weatherSvg = Thunder;
 	} else if (code >= 300 && !(code !== 400)) {
-		//Drizzle weather status
 		weatherSvg = Drizzle;
 	} else if (code >= 500 && code !== 511 && !(code >= 600)) {
-		//Rainy weather status
 		weatherSvg = Rainy;
 	} else if (code >= 700 && code !== 701 && !(code >= 800)) {
-		//Mist weather status
 		weatherSvg = Haze;
 	} else if (code === 701) {
 		weatherSvg = Misty;
 	} else if (code === 511) {
-		//Freezing rain weather status
 		weatherSvg = FreezingRain;
 	} else if (code === 800) {
 		weatherSvg = Day;
 	} else if (code === 803) {
-		//Broken clouds
 		weatherSvg = BrokenClouds;
 	} else if (code === 804) {
-		//overcast clouds
 		weatherSvg = OvercastClouds;
 	} else if (code === 801) {
-		//few clouds
 		weatherSvg = FewClouds;
 	} else if (code === 802) {
-		//few clouds
 		weatherSvg = ScatteredClouds;
 	} else {
-		//weather code doesn't exist
 		weatherSvg = "";
 	}
 
@@ -218,11 +201,9 @@ export const updateReactDom = (result) => {
 		$("#main-weather-icon-container").html(
 			`<img src=${weatherSvg} alt="main-weather-icon" width="64" height="64"/>`
 		);
-		//sub weather components 
 		$("#wind-value").html(`${result.wind.speed} m/s` );
 		$("#humidity-value").html(`${result.main.humidity} %`);
 		$("#pressure-value").html(`${result.main.pressure} hPa`)
-		//create the database values for offline caching
 		db.create("WEATHER_LOCATION", `${result.name} ${result.sys.country}`);
 		db.create("WEATHER_DEG", result.main.temp);
 		db.create("WEATHER_DESCRIPTION", result.weather[0].description);
@@ -252,7 +233,6 @@ export const getCurrentWeather = (location) => {
 						timer: 1000,
 					});
 				} else {
-					//check if the API returned a legit response
 					if (result.cod === 200) {
 						
 						updateReactDom(result);
@@ -263,7 +243,6 @@ export const getCurrentWeather = (location) => {
 				$("#searchWeather").val(" ");
 				closeUtilityComponent();
 
-				//check if the error is empty
 				if (error === "") {
 					Swal.fire({
 						toast: true,

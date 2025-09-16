@@ -147,6 +147,7 @@
 
 /* styles for the footer navigation */
 .footer-nav {
+	background-color: #13508c;
 	color: white;
 	width: 100%;
 	padding: 3px;
@@ -207,6 +208,25 @@ section.footer-nav > section {
 }
 
 /* weather app styling */
+.clouds-bg {
+  background: url("../../assets/weather.jpg") repeat-x;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100vh;
+  background-size: cover;
+  animation: moveClouds 60s linear infinite;
+  z-index: -1; /* keep it behind content */
+}
+@keyframes moveClouds {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0; /* adjust speed/direction */
+  }
+}
 
 .current-weather-unit {
 	display: inline-block;

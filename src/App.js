@@ -1,5 +1,4 @@
-import Home from "./pages/Home";
-import Support from "./pages/Support";
+import Home from "./pages/";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import WeatherApp from "./pages/Weather";
 import WeatherMain from "./pages/WeatherMain";
@@ -8,6 +7,7 @@ import ForecastWeather from "./pages/ForecastWeather";
 import Settings from "./pages/Settings";
 import { db } from "./backend/app_backend";
 import "./autoload";
+import Weather from "./pages/Weather";
 
 function App() {
   let homePageSeen = db.get("HOME_PAGE_SEEN");
@@ -20,12 +20,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={DEFAULT_ROUTE_PAGE} />
-        <Route path="support" element={<Support />} />
         <Route path="weather" element={<WeatherApp />} />
         <Route path="weathermain" element={<WeatherMain />} />
         <Route path="forecast" element={<ForecastWeather />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
+         <Route path="/" element={<Home />} />
+        <Route path="/weather" element={<Weather />} />
       </Routes>
     </BrowserRouter>
   );
