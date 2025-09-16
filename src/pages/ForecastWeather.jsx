@@ -69,7 +69,6 @@ const ForecastWeather = () => {
 							position: "top",
 							showConfirmButton: false,
 						}).then((willProceed) => {
-							//scroll to top when the promise is resolved!
 							currentWeather.scrollToElement("forecastPage");
 						});
 					} else {
@@ -81,7 +80,6 @@ const ForecastWeather = () => {
 							position: "top",
 							showConfirmButton: false,
 						}).then((willProceed) => {
-							//scroll to top when the promise is resolved!
 							currentWeather.scrollToElement("forecastPage");
 						});
 					}
@@ -107,7 +105,6 @@ const ForecastWeather = () => {
 		}
 	}
 
-	//first day weather mapping
 	const mapFirstDayData = (result) => {
 		//first day data is from array 0-8
 		let outputArray = [];
