@@ -1,4 +1,3 @@
-import Home from "./pages/";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import WeatherApp from "./pages/Weather";
 import WeatherMain from "./pages/WeatherMain";
@@ -14,7 +13,7 @@ function App() {
   let DEFAULT_ROUTE_PAGE;
   homePageSeen
     ? (DEFAULT_ROUTE_PAGE = <WeatherApp />)
-    : (DEFAULT_ROUTE_PAGE = <Home />);
+    : (DEFAULT_ROUTE_PAGE = <WeatherApp />);
 
   return (
     <BrowserRouter>
@@ -25,7 +24,6 @@ function App() {
         <Route path="forecast" element={<ForecastWeather />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
-         <Route path="/" element={<Home />} />
         <Route path="/weather" element={<Weather />} />
       </Routes>
     </BrowserRouter>

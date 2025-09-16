@@ -18,7 +18,7 @@ import Clouds from "./../assets//weather.jpg";
 
 const WeatherApp = () => {
   if (!db.get("HOME_PAGE_SEEN")) {
-    navigate("/");
+    navigate("weather");
   }
   const [componentToInsert, setComponentToInsert] = useState("");
   const [weatherInput, setWeatherInput] = useState("");
