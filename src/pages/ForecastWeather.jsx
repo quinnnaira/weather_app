@@ -9,11 +9,7 @@ import ForecastDailyWeatherComponent from "./../components/forecastWeatherCompon
 import Swal from "sweetalert2";
 import * as utilis from "./../inc/scripts/utilities";
 const ForecastWeather = () => {
-	//check if the user navigated from the home page
-	if (!db.get("HOME_PAGE_SEEN")) {
-		navigate("/");
-	}
-	//holds the current component to insert into the utility footer component
+
 	const [componentToInsert, setComponentToInsert] = useState("");
 	const [forecastData, setForecastData] = useState(null);
 
@@ -59,7 +55,6 @@ const ForecastWeather = () => {
 				},
 
 				error: (xhr, status, error) => {
-					//check if the error is empty
 					if (error === "") {
 						Swal.fire({
 							toast: true,

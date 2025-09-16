@@ -17,9 +17,7 @@ import PressureIcon from "./../assets/pressure-icon.svg";
 import Clouds from "./../assets//weather.jpg";
 
 const WeatherApp = () => {
-  if (!db.get("HOME_PAGE_SEEN")) {
-    navigate("weather");
-  }
+
   const [componentToInsert, setComponentToInsert] = useState("");
   const [weatherInput, setWeatherInput] = useState("");
 
@@ -170,7 +168,6 @@ const WeatherApp = () => {
           </Link>
         </section>
 
-        {/* --- your weather UI (unchanged) --- */}
         <section className="current-weather-container d-flex justify-content-between px-2 my-3">
           <section className="current-weather-value-container">
             <section className="d-flex ">

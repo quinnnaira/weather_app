@@ -14,7 +14,6 @@ const Settings = () => {
 		settings.getDefaultLocation()
 	);
 	const [weatherUnit, setWeatherUnit] = useState();
-	//database returns a string
 	let trackedLocation = db.get("TRACK_SAVED_LOCATION_WEATHER");
 	let trackedLocationLegit = trackedLocation === "true" ? true : false;
 
