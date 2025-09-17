@@ -11,6 +11,7 @@ import HumidityIcon from "./../assets/humidity-icon.svg";
 import WindIcon from "./../assets/wind-icon.svg";
 import PressureIcon from "./../assets/pressure-icon.svg";
 import Clouds from "./../assets/clouds.jpg";
+import Logo from "./../assets/weblogo.png"
 
 
 const WeatherApp = () => {
@@ -123,7 +124,7 @@ const WeatherApp = () => {
           </section>
 
           <img
-            src="weblogo.png"
+            src={Logo}
             width={64}
             height={64}
             alt="main weather icon"
