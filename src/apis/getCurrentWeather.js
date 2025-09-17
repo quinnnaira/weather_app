@@ -58,7 +58,7 @@ export const checkWeatherUnitDeg = () => {
 	return result;
 };
 
-export const handleWeatherForm = (e, search) => {
+export const handleWeatherForm = async (e, search) => {
 	e.preventDefault();
 
 	if (db.get("TRACK_SAVED_LOCATION_WEATHER") === "false") {
@@ -80,7 +80,6 @@ export const handleWeatherForm = (e, search) => {
 
 	scrollToElement("weatherContainer");
 	jQuery(($) => {
-		$("#searchWeather").val("");
 	});
 };
 

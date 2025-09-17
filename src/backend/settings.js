@@ -51,7 +51,6 @@ export const trackSavedLocationWeather = () => {
 		const $toggleBtn = document.getElementById("flexSwitchCheckDefault");
 
 		if ($toggleBtn.checked) {
-			//check if the value is in the database, then update it
 			if (db.get("TRACK_SAVED_LOCATION_WEATHER")) {
 				db.update("TRACK_SAVED_LOCATION_WEATHER", true);
 				Swal.fire({
@@ -126,7 +125,6 @@ export const changeWeatherUnit = (e) => {
 				})
 				break;
 		}
-		//check if valuex exists in the DB
 		if(db.get("WEATHER_UNIT")){
 			db.update("WEATHER_UNIT",unitToStore);
 			Swal.fire({

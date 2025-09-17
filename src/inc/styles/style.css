@@ -209,7 +209,7 @@ section.footer-nav > section {
 
 /* weather app styling */
 .clouds-bg {
-  background: url("../../assets/weather.jpg") repeat-x;
+  background: url("../../assets/clouds.jpg") repeat-x;
   position: absolute;
   top: 0;
   left: 0;
