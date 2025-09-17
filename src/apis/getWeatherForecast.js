@@ -2,6 +2,7 @@ import jQuery from "jquery";
 
 
 
+
 export const getWeatherForecast = () =>{
     jQuery(($)=>{
         $.noConflict();
